@@ -16,27 +16,31 @@
     };
   </script>
   <style>
-    body { background: linear-gradient(135deg, #071722, #103149 60%, #0d1d2b); }
+    body { background: radial-gradient(circle at 15% 10%, rgba(239, 77, 95, .2), transparent 28%), linear-gradient(135deg, #071722, #103149 60%, #0d1d2b); }
     .extra-panel { display: none; }
     .extra-panel.visible { display: block; }
+    .eyebrow { letter-spacing: .16em; }
   </style>
 </head>
 <body class="min-h-screen px-4 py-6 text-slate-100 sm:px-6 lg:flex lg:items-center lg:justify-center">
   <main class="mx-auto w-full max-w-5xl overflow-hidden rounded-3xl border border-white/15 bg-ink/95 shadow-2xl" aria-labelledby="player-name">
-    <header class="bg-gold px-6 py-4 text-xs font-extrabold uppercase tracking-[0.18em] text-night sm:px-8">Fútbol profesional</header>
+    <header class="flex flex-wrap items-center justify-between gap-2 bg-gold px-6 py-4 text-night sm:px-8">
+      <span class="eyebrow text-xs font-extrabold uppercase">Fútbol profesional</span>
+      <span class="rounded-full bg-night px-3 py-1 text-xs font-bold text-gold">Ecuador · Chelsea</span>
+    </header>
     <section class="grid gap-8 p-6 sm:p-8 md:grid-cols-[minmax(260px,340px)_minmax(0,1fr)] lg:p-10" aria-label="Perfil de jugador">
       <div>
-        <img class="h-72 w-full rounded-2xl border-4 border-gold object-cover shadow-[0_16px_32px_rgba(245,211,93,0.18)] sm:h-96" src="https://images.unsplash.com/photo-1517466787929-bc90951d0974?auto=format&fit=crop&w=900&q=80" alt="Moisés Caicedo, futbolista ecuatoriano en acción" />
+        <img class="h-80 w-full rounded-2xl border-4 border-gold object-cover object-top shadow-[0_16px_32px_rgba(245,211,93,0.18)] sm:h-[460px]" src="https://commons.wikimedia.org/wiki/Special:FilePath/Moises_Caicedo_Cote_D%27Ivoire_v_Ecuador_14_June_2026-244.jpg?width=900" alt="Moisés Caicedo durante un partido de Ecuador" />
       </div>
       <article class="flex flex-col justify-center">
         <h1 id="player-name" class="mb-2 text-4xl font-black leading-tight text-coral sm:text-5xl">Moisés Caicedo</h1>
-        <p class="mb-5 text-lg font-bold text-sky">Mediocampista · Ecuador</p>
+        <p class="mb-5 text-lg font-bold text-sky">Centrocampista · Capitán de Ecuador · Dorsal 25</p>
         <p class="mb-5 max-w-prose text-slate-300">Moisés Caicedo es un futbolista ecuatoriano reconocido por su fuerza, equilibrio, visión de juego y capacidad para recuperar balones en el centro del campo. Su estilo combina intensidad defensiva con excelente salida de balón y liderazgo.</p>
         <div class="grid grid-cols-2 gap-3" aria-label="Datos principales del jugador">
           <div class="rounded-xl border border-white/15 bg-white/5 p-4"><span class="mb-1 block text-xs uppercase tracking-wider text-slate-300">Nacionalidad</span><strong class="text-white">Ecuatoriana</strong></div>
-          <div class="rounded-xl border border-white/15 bg-white/5 p-4"><span class="mb-1 block text-xs uppercase tracking-wider text-slate-300">Club</span><strong class="text-white">Chelsea</strong></div>
+          <div class="rounded-xl border border-white/15 bg-white/5 p-4"><span class="mb-1 block text-xs uppercase tracking-wider text-slate-300">Club</span><strong class="text-white">Chelsea F. C.</strong></div>
           <div class="rounded-xl border border-white/15 bg-white/5 p-4"><span class="mb-1 block text-xs uppercase tracking-wider text-slate-300">Posición</span><strong class="text-white">Mediocampista</strong></div>
-          <div class="rounded-xl border border-white/15 bg-white/5 p-4"><span class="mb-1 block text-xs uppercase tracking-wider text-slate-300">Altura</span><strong class="text-white">1.78 m</strong></div>
+          <div class="rounded-xl border border-white/15 bg-white/5 p-4"><span class="mb-1 block text-xs uppercase tracking-wider text-slate-300">Dorsal</span><strong class="text-white">#25</strong></div>
         </div>
         <p class="my-5 max-w-prose text-slate-300">Es valorado por su lectura del juego, su trabajo constante y su capacidad para equilibrar defensa y ataque.</p>
         <div class="flex flex-col gap-3 sm:flex-row" aria-label="Acciones de perfil">
