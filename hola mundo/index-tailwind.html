@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Moisés Caicedo | Tailwind</title>
+  <meta name="description" content="Perfil profesional de Moisés Caicedo, mediocampista ecuatoriano." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { night: '#071722', ink: '#0f2230', coral: '#ef4d5f', gold: '#f5d35d', sky: '#74d5ff' }
+        }
+      }
+    };
+  </script>
+  <style>
+    body { background: linear-gradient(135deg, #071722, #103149 60%, #0d1d2b); }
+    .extra-panel { display: none; }
+    .extra-panel.visible { display: block; }
+  </style>
+</head>
+<body class="min-h-screen px-4 py-6 text-slate-100 sm:px-6 lg:flex lg:items-center lg:justify-center">
+  <main class="mx-auto w-full max-w-5xl overflow-hidden rounded-3xl border border-white/15 bg-ink/95 shadow-2xl" aria-labelledby="player-name">
+    <header class="bg-gold px-6 py-4 text-xs font-extrabold uppercase tracking-[0.18em] text-night sm:px-8">Fútbol profesional</header>
+    <section class="grid gap-8 p-6 sm:p-8 md:grid-cols-[minmax(260px,340px)_minmax(0,1fr)] lg:p-10" aria-label="Perfil de jugador">
+      <div>
+        <img class="h-72 w-full rounded-2xl border-4 border-gold object-cover shadow-[0_16px_32px_rgba(245,211,93,0.18)] sm:h-96" src="https://images.unsplash.com/photo-1517466787929-bc90951d0974?auto=format&fit=crop&w=900&q=80" alt="Moisés Caicedo, futbolista ecuatoriano en acción" />
+      </div>
+      <article class="flex flex-col justify-center">
+        <h1 id="player-name" class="mb-2 text-4xl font-black leading-tight text-coral sm:text-5xl">Moisés Caicedo</h1>
+        <p class="mb-5 text-lg font-bold text-sky">Mediocampista · Ecuador</p>
+        <p class="mb-5 max-w-prose text-slate-300">Moisés Caicedo es un futbolista ecuatoriano reconocido por su fuerza, equilibrio, visión de juego y capacidad para recuperar balones en el centro del campo. Su estilo combina intensidad defensiva con excelente salida de balón y liderazgo.</p>
+        <div class="grid grid-cols-2 gap-3" aria-label="Datos principales del jugador">
+          <div class="rounded-xl border border-white/15 bg-white/5 p-4"><span class="mb-1 block text-xs uppercase tracking-wider text-slate-300">Nacionalidad</span><strong class="text-white">Ecuatoriana</strong></div>
+          <div class="rounded-xl border border-white/15 bg-white/5 p-4"><span class="mb-1 block text-xs uppercase tracking-wider text-slate-300">Club</span><strong class="text-white">Chelsea</strong></div>
+          <div class="rounded-xl border border-white/15 bg-white/5 p-4"><span class="mb-1 block text-xs uppercase tracking-wider text-slate-300">Posición</span><strong class="text-white">Mediocampista</strong></div>
+          <div class="rounded-xl border border-white/15 bg-white/5 p-4"><span class="mb-1 block text-xs uppercase tracking-wider text-slate-300">Altura</span><strong class="text-white">1.78 m</strong></div>
+        </div>
+        <p class="my-5 max-w-prose text-slate-300">Es valorado por su lectura del juego, su trabajo constante y su capacidad para equilibrar defensa y ataque.</p>
+        <div class="flex flex-col gap-3 sm:flex-row" aria-label="Acciones de perfil">
+          <button id="trajectoryBtn" class="rounded-full bg-gold px-5 py-3 font-bold text-night transition hover:-translate-y-0.5 hover:bg-yellow-300 focus:outline-none focus:ring-2 focus:ring-gold focus:ring-offset-2 focus:ring-offset-ink" type="button">Ver trayectoria</button>
+          <button id="moreInfoBtn" class="rounded-full border border-white/20 px-5 py-3 font-bold text-white transition hover:-translate-y-0.5 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-ink" type="button">Más información</button>
+        </div>
+        <div id="extraPanel" class="extra-panel mt-5 rounded-xl border border-white/15 bg-white/5 p-4 text-slate-300" aria-live="polite">Moisés Caicedo se destaca por su lectura del juego, su capacidad para recuperar balones y su equilibrio entre defensa y salida de balón.</div>
+      </article>
+    </section>
+  </main>
+  <script>
+    const toggleBtn = document.getElementById('trajectoryBtn');
+    const panel = document.getElementById('extraPanel');
+    const infoBtn = document.getElementById('moreInfoBtn');
+    toggleBtn.addEventListener('click', () => { panel.classList.toggle('visible'); toggleBtn.textContent = panel.classList.contains('visible') ? 'Ocultar trayectoria' : 'Ver trayectoria'; });
+    infoBtn.addEventListener('click', () => { document.querySelector('[aria-label="Datos principales del jugador"]').scrollIntoView({ behavior: 'smooth', block: 'nearest' }); panel.classList.add('visible'); toggleBtn.textContent = 'Ocultar trayectoria'; });
+  </script>
+</body>
+</html>
